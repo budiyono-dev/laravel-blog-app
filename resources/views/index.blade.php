@@ -8,15 +8,16 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('src/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('src/css/fontawesome.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('src/css/fontawesome.min.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('src/css/bootstrap-icon/bootstrap-icons.css') }}">   
+    {{-- <link rel="stylesheet" href="{{ asset('src/css/signin.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"> --}}
     <title>{{ $title }}</title>
 </head>
 
 <body>
     @include('navbar')
-    <div class="container mt-4">
-        @yield('container')
-    </div>
+    @yield('container')
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

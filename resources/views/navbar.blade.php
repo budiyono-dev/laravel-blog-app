@@ -13,7 +13,7 @@
         </div>
 
         <div class="navbar-nav ml-auto">
-            <a href="/login" class="nav-item nav-link">Login</a>
+            <a href="/login" class="nav-item nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
         </div>
     </div>
 </nav>

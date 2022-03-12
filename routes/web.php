@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RegisterController;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
@@ -56,7 +58,7 @@ Route::get('/categories/{category:slug}', function (Category $category) {
 //     ]);
 // });
 
-//lazy eager laoding
+//lazy eager laoding 
 Route::get('/author/{user:username}', function (User $user) {
     // dd($category->posts);
     return view('posts', [
@@ -64,3 +66,6 @@ Route::get('/author/{user:username}', function (User $user) {
         "posts" => $user->posts->load("category", "user"),
     ]);
 });
+
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);
