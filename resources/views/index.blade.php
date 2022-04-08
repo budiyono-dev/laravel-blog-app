@@ -23,11 +23,20 @@
             z-index: 10;
         }
 
+        #btn-login {
+            display: none;
+        }
+
     </style>
+    @stack('style')
 </head>
 
 <body>
-    @include('navbar')
+    @if ($title !== 'Dashboard')
+        @include('navbar')
+    @else
+        @include('dashbar')
+    @endif
     <div class="row justify-content-center mt-3 floating-message">
         <div class="col-6 m-auto">
             <div class="alert fade show" role="alert">
@@ -48,6 +57,7 @@
     <script>
         const alertMessage = document.getElementById('alert-message');
         const noficication = @json(session()->has('notificationMessage') ? session('notificationMessage') : '');
+        const btnLogin = document.getElementById('btn-login');
         // const btnTogglePassword = document.querySelector('.toogle-password');
 
         $(document).ready(function() {
@@ -59,6 +69,10 @@
                 setTimeout(() => {
                     $('.floating-message').fadeOut('slow');
                 }, 5000);
+            }
+
+            if (document.title !== 'Login') {
+                btnLogin.style.display = 'inline-block';
             }
 
 

@@ -17,7 +17,7 @@
         <div class="navbar-nav ml-auto">
             @auth
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                         aria-expanded="false">
                         Wellcome back, {{ auth()->user()->name }}
                     </a>
@@ -26,13 +26,13 @@
                         <div class="dropdown-divider"></div>
                         <form action="/logout" method="POST">
                             @csrf
-                            <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>
+                            <button type="submit" class="dropdown-item "><i class="bi bi-box-arrow-right"></i> Logout</button>
                         </form>
                     </div>
                 </li>
             @else
-                <li class="nav-item">
-                    <a href="/login" class="nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                <li class="nav-item" id="btn-login">
+                    <a href="/login" class="nav-link active"><i class="bi bi-box-arrow-in-right"></i> Login</a>
                 </li>
             @endauth
         </div>
